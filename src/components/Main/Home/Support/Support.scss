@@ -1,0 +1,138 @@
+@import "components/ui/_variables";
+
+.support {
+  width: 100%;
+  background-size: cover;
+  height: max-content;
+  &__container {
+    &-image {
+      margin-bottom: 5rem;
+      margin-top: 2rem;
+      width: 100%;
+      margin-left: auto;
+      @media screen and (max-width: $small-screen) {
+        margin-left: auto;
+      }
+    }
+  }
+  &__content {
+    margin-top: 169px;
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    h1 {
+      font-weight: 700;
+      font-size: xx-large;
+      line-height: 40px;
+      width: 100%;
+    }
+    h2 {
+      margin-top: 1rem;
+      font-size: medium;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 30px;
+      opacity: 0.8;
+      width: 100%;
+      text-align: justify;
+    }
+  }
+
+  &__item {
+    .support-mail {
+      &__client {
+        width: 60%;
+
+        .item-arrow {
+          margin-left: 1rem;
+          color: #0f2137;
+          opacity: 0.3;
+        }
+        h3 {
+          font-weight: 600;
+          font-size: x-large;
+          line-height: 2.5rem;
+          width: 100%;
+          color: $red-color;
+        }
+        p {
+          font-size: small;
+          font-weight: 100;
+          line-height: 20px;
+          mix-blend-mode: normal;
+          opacity: 0.8;
+          width: 60%;
+          text-align: justify;
+        }
+      }
+    }
+    &-live {
+      display: flex;
+      .item-mail {
+        margin-top: 30px;
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+        vertical-align: middle;
+        text-align: center;
+        background: $yellow-color;
+        border-radius: 60px;
+        color: $white-color;
+        font-size: xx-large;
+      }
+      .item-codetag {
+        margin-top: 30px;
+        width: 60px;
+        height: 60px;
+        padding: 9px;
+        vertical-align: middle;
+        text-align: center;
+        background: $blue-color;
+        border-radius: 50px;
+        color: $white-color;
+        font-size: xx-large;
+      }
+
+      .item-client {
+        width: 400px;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        .item-arrow {
+          margin-left: 1rem;
+          color: #0f2137;
+          opacity: 0.3;
+        }
+        h3 {
+          font-weight: 600;
+          font-size: x-large;
+          line-height: 2.5rem;
+          width: 70%;
+          color: $red-color;
+        }
+        p {
+          font-size: small;
+          font-weight: 100;
+          line-height: 20px;
+          mix-blend-mode: normal;
+          opacity: 0.8;
+          width: 60%;
+          text-align: justify;
+        }
+      }
+    }
+  }
+  &--desktop-only {
+    display: none;
+    @media screen and (min-width: $medium-screen) {
+      display: block;
+    }
+  }
+
+  &--mobile-only {
+    display: block;
+    height: 100%;
+    @media screen and (min-width: $medium-screen) {
+      display: none;
+    }
+  }
+}

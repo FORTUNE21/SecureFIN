@@ -1,0 +1,14 @@
+@import "components/ui/_variables";
+
+.about {
+    margin: 87px 50px 87px 60px ;
+   
+
+   &__title {
+    font-weight: 700;
+  }
+   p {
+        font-size: small;
+        margin-top: 20rem;
+    }
+}

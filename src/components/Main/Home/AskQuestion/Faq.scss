@@ -1,0 +1,68 @@
+@import "components/ui/_variables";
+
+.question {
+  width: 100%;
+  background-size: cover;
+  &__container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 135px;
+  }
+  &__row {
+    justify-content: space-between !important;
+  }
+
+  &__title {
+    margin-top: 7rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
+    margin-right: 5rem;
+
+    h1 {
+      text-align: center;
+      color: $red-color;
+      line-height: 50px;
+      align-items: center;
+      letter-spacing: -1.5px;
+      font-size: xx-large;
+    }
+    p {
+      font-size: large;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 20px;
+      mix-blend-mode: normal;
+      opacity: 0.8;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  &-content {
+    &__support {
+      h2 {
+        width: 300px;
+        font-weight: 700;
+        font-size: larger;
+        line-height: 40px;
+        letter-spacing: -1px;
+        color: $red-color;
+      }
+      p {
+        width: 250px;
+        font-size: small;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        mix-blend-mode: normal;
+        opacity: 0.7;
+        margin-top: 12px;
+      }
+    }
+    &__button {
+      margin-top: 1.5rem;
+      background-color: $red-color;
+      border: none;
+    }
+  }
+}
