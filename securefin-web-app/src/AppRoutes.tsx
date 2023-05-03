@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route } from 'react-router-dom';
 
 import About from "./components/Main/About/About";
 import Home from "./components/Main/Home/Home";
@@ -12,8 +12,7 @@ import Register from "./pages/Auth/Register/Register";
 const AppRoutes = () => {
     return (
         <>
-        {}
-        <Routes>
+        {/*<Routes>*/}
             <Route path="/" element= {<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/features" element={<Features />} />
@@ -22,8 +21,7 @@ const AppRoutes = () => {
             <Route path="./login" element={<Login />} />
             <Route path="./signup" element={<Signup />} />
             <Route path="./register" element={<Register />} />
-        </Routes>
-        {}
+        {/*</Routes>*/}
         </>
     );
 };
