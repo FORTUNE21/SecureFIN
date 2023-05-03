@@ -1,4 +1,4 @@
-import "./Hero.scss"
+import "../Hero.scss";
 import Button from "../../../../ui/Button";
 import { Link } from "react-router-dom";
 

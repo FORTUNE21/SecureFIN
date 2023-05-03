@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Icon, Text } from "../../../components/ui";
 import { Col, Row } from "react-bootstrap";
-import logo from "assets/logo.png";
+import logo from "../../../assets/logo.png";
 import "./LayoutFooter.scss";
 
 const LayoutFooter = () => {

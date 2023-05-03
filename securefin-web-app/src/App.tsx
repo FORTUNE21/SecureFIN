@@ -1,6 +1,7 @@
 import "./App.scss";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from "./AppRoutes";
+// import Login from './pages/Auth/Login/Login';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
