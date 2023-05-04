@@ -51,51 +51,30 @@ const LoginForm = () => {
 
   return (
     <>
-      <Alert
-        title=""
-        text="Redirecting you to dashboard."
-        direction="RIGHT"
-        show={status === SUCCESS ? true : false}
-      />
-
-      <form className="auth-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className={`message ${status === SUCCESS ? "success" : "error"}`}>
-          {message}
-        </div>
-        <Input
-          placeholder="Enter Email Address"
-          inputClass="auth-form__input"
-          register={register}
-          name="email"
-          hasError={errors?.email ? true : false}
-        />
-        <Input
-          placeholder="Enter Password"
-          inputClass="auth-form__input"
-          name="password"
-          hasError={errors?.password ? true : false}
-          register={register}
-        />
-        <Button
-          text="Login"
-          className="auth-form__button"
-          isLoadingText="Please wait..."
-          status={status}
-        />
-      </form>
-
-      <div className="auth-link">
-        <Link to="/" className="auth-link__forgot">
-          Forgot Password
-        </Link>
-
-        <div className="auth-link__login">
-          Don't have an account?
-          <Link to="/signup/" className="auth-link__started">
-            {" "}
-            Get Started
-          </Link>
-        </div>
+      <div>
+        <main className="pa4 black-80">
+            <form className="measure">
+              <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+                <legend className="f4 fw6 ph0 mh0 center">Sign In</legend>
+                <div className="mt3">
+                  <label className="db fw6 lh-copy f6">Email</label>
+                  <input className="pa2 input-reset ba bg-transparent w-100" type="email" name="email-address"  id="email-address" />
+                </div>
+                <div className="mv3">
+                  <label className="db fw6 lh-copy f6">Password</label>
+                  <input className="b pa2 input-reset ba bg-transparent w-100" type="password" name="password"  id="password" />
+                </div>
+                <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label>
+              </fieldset>
+              <div className="">
+                <input style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)'}} className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100" type="submit" value="Sign in" />
+              </div>
+              <div className="lh-copy mt3">
+                <a className="f6 link dim black db pointer">Sign up</a>
+                <a className="f6 link dim black db pointer">Forgot your password?</a>
+              </div>
+            </form>
+          </main>
       </div>
     </>
   );
