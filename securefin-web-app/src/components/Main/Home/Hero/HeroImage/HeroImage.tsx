@@ -7,7 +7,7 @@ const HeroImage = () => {
             <img
             src={heroImage}
             className="hero__container-image"
-            alt="Background Image"
+            alt="Web-app Security"
             />
         </div>
         </>
