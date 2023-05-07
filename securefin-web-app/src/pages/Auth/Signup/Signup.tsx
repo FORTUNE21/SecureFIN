@@ -5,9 +5,8 @@ import SignupForm from "./SignupForm/SignupForm";
 const Signup = () => {
   return (
     <>
-      <div className="auth">
+      <div style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)', height: '100lvh'}} className="auth">
         <Card className="auth__card">
-          <h1> CREATE AN ACCOUNT</h1>
           <SignupForm />
         </Card>
       </div>

@@ -8,13 +8,14 @@ import Contact from "./components/Main/Contact/Contact";
 import Signup from "./pages/Auth/Signup/Signup";
 import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
+import Landing from './pages/Landing/Landing';
 
 
 const AppRoutes = () => {
     return (
         <>
             <Routes>
-                <Route path="/" element= {<Home />} />
+                <Route path="/" element= {<Landing />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/features" element={<Features />} />
                 <Route path="/contact" element={<Contact />} />

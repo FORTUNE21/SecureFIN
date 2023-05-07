@@ -8,7 +8,7 @@ const LayoutHeader = () => {
     <>
       <header className="layout-header">
         <div className="logo">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" style={{height: '60px'}}/>
         </div>
         <div className="layout-header__desktop">
           <nav>
@@ -22,7 +22,7 @@ const LayoutHeader = () => {
               </li>
               <li className = "li-items__auth">
                 <Link to="/login">Log in</Link>
-                <Link to="/signup">Get Started</Link>
+                <Link to="/register">Get Started</Link>
               </li>
             </ul>
           </nav>
