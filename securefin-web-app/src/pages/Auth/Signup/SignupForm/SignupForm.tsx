@@ -2,54 +2,40 @@ import React, { Component, useState } from 'react';
 import "../../Auth.scss";
 import { Link, useNavigate } from "react-router-dom";
 
-class SignUpForm extends Component<any, any> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      password: "",
-      router: ""
-    }
-  }
+const SignUpForm = () => {
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  onNameChange = (e: any) => {
-    this.setState({ name: e.target.value })
-    console.log(e.target.value)
-  }
+  const navigate = useNavigate();
 
-  onEmailChange = (e: any) => {
-    this.setState({ email: e.target.value })
-    console.log(e.target.value)
-  }
+  const onSubmitSignUp = async (e: any) => {
+    e.preventDefault();
 
-  onPasswordChange = (e: any) => {
-    this.setState({ password: e.target.value })
-    console.log(e.target.value)
-  }
-
-  onSubmitSignUp = (e: any) => {
-    fetch('http://localhost:5000/api/users/signup', {
+    const response = await fetch('http://localhost:5000/api/users/signup', {
       mode: 'cors',
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.password
+        name,
+        email,
+        password
       })
-    })
-    .then(response => response.json())
-    .then(json => {
-      if (json) {
-        console.log(json);
-      }
-    })
-    .catch(error => console.log('Authorization failed: ' + error.message));
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      localStorage.setItem("access_token", data.access_token);
+      console.log("Sign up successful!")
+      console.log(data)
+      navigate('/login')
+    } else {
+      console.error("Sign up failed. ")
+    }    
   }
 
-  render() {
+
     return (
       <>
         <div className="container">
@@ -70,27 +56,27 @@ class SignUpForm extends Component<any, any> {
               <form>
                 <div className="input-field col s12">
                   <input
-                    onChange={this.onNameChange}
+                    onChange={(e: any) => setName(e.target.value)}
+                    value={name}
                     placeholder='Name'
-                    id="name"
                     type="text"
                   />
                   <label htmlFor="name"></label>
                 </div>
                 <div className="input-field col s12">
                   <input
-                    onChange={this.onEmailChange}
+                    onChange={(e: any) => setEmail(e.target.value)}
+                    value={email}
                     placeholder='Email'
-                    id="email"
                     type="email"
                   />
                   <label htmlFor="email"></label>
                 </div>
                 <div className="input-field col s12">
                   <input
-                    onChange={this.onPasswordChange}
+                    value={password}
+                    onChange={(e: any) => setPassword(e.target.value)}
                     placeholder='Password'
-                    id="password"
                     type="password"
                   />
                   <label htmlFor="password"></label>
@@ -105,12 +91,10 @@ class SignUpForm extends Component<any, any> {
                       background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)',
                     }}
                     
-                    onClick={this.onSubmitSignUp}
+                    onClick={onSubmitSignUp}
                     className="btn center waves-effect waves-light hoverable blue accent-3"
                   >
-                    <Link to='/login'>
                     Sign Up
-                    </Link>
                   </div>
                 </div>
               </form>
@@ -119,8 +103,8 @@ class SignUpForm extends Component<any, any> {
         </div>
       </>
     );
-  }
-};
+
+}
 
 
   export default SignUpForm;

@@ -1,39 +1,39 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, useState } from 'react';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import "../../Auth.scss";
 
-class LoginForm extends Component<any, any> {
-  constructor(props: any){
-    super(props);
-    this.state = {
-      email: '',
-      password: ''
-    }
-  }
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  onSubmitSignIn = (e: any) => {
-    fetch('http://localhost:5000/api/users/login', {
+  const navigate = useNavigate();
+
+  const onSubmitSignIn = async (e: any) => {
+    e.preventDefault();
+
+    console.log('help me!')
+    const response = await fetch('http://localhost:5000/api/users/login', {
       mode: 'cors',
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
+        email,
+        password
       })
-    })
-    .then(response => response.json())
-    .then(user => {
-      if(user.id) {
-        console.log('1')
-        console.log(user);
-      } else {
-        alert('Invalid username or password')
-      }
-      console.log('2')
-    })
-  }
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      localStorage.setItem("access_token", data.access_token);
+      console.log("Login successful!")
+      console.log(data)
+      navigate('/')
+    } else {
+      console.error("Login failed. ")
+    }
+  };
 
-  render() {
+
     return (
       <>
         <div>
@@ -43,17 +43,19 @@ class LoginForm extends Component<any, any> {
                   <legend className="f4 fw6 ph0 mh0 center">Sign In</legend>
                     <div className="input-field col s12">
                       <input
-                          id="email"
+                          value={email}
                           type="email"
                           placeholder="Email"
+                          onChange={(e: any) => setEmail(e.target.value)}
                       />
                       <label htmlFor="email"></label>
                   </div>
                   <div className="input-field col s12">
                       <input
-                          id="password"
+                          value={password}
                           type="password"
                           placeholder="Password"
+                          onChange={(e: any) => setPassword(e.target.value)}
                       />
                       <label htmlFor="password"></label>
                   </div>
@@ -63,18 +65,15 @@ class LoginForm extends Component<any, any> {
                   <div
                    style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)'}}
                    className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100" 
-                   >
-                    Login
+                   onClick={onSubmitSignIn}
+                   > Sign In
+                   {/* <Link to='/'>
+                    Sign In
+                   </Link> */}
                    </div>
                 </div>
-                <div className="lh-copy mt3"
-                  onClick={this.onSubmitSignIn}
-                >
-                  <Link 
-                    to="/"
-                    className="f6 link dim db pointer">
-                    Login
-                  </Link>
+                <div className="lh-copy mt3 f6 link dim db pointer">   
+                    Sign up
                   <a className="f6 link dim db pointer">Forgot your password?</a>
                 </div>
               </form>
@@ -82,9 +81,7 @@ class LoginForm extends Component<any, any> {
         </div>
       </>
     );
-  };  
 }
-
 
 
 export default LoginForm;
