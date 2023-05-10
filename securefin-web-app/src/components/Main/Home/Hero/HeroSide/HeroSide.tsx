@@ -17,7 +17,7 @@ const HeroSide = () => {
         <Button
           text="Get Started"
           isLoadingText="Please wait"
-          className="hero-contain__button"
+          className="start-button"
         />
         </Link>
         

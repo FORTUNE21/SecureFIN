@@ -1,36 +1,37 @@
 import { Link } from 'react-router-dom';
-import LayoutHeader from '../../components/Layout/LayoutHeader/LayoutHeader';
-import LayoutFooter from '../../components/Layout/LayoutFooter/LayoutFooter';
+import Layout from "../../components/Layout/Layout";
 
 const Landing = () => {
      return(
           <>
-               <LayoutHeader />
-               <div style={{ height: "75vh" }} className="container valign-wrapper">
+              <Layout layoutMainClass="home-page">
+               <div style={{ height: "45vh" }} className="container valign-wrapper">
                     <div className="row">
-                         <div className="col s12 center-align">
-                              <h4>
-                              <b>Build</b> a simple login/auth app with the{" "}
-                                   <span style={{ fontFamily: "monospace" }}>MERN</span> stack
-                              </h4>
+                         <div className="col s16 center-align">
+                              <h2>
+                              <b style={{ fontFamily: "calligraphy"}}>Welcome to SecureFIN</b>{" "}
+                                   {/* <span style={{ fontFamily: "monospace" }}>MERN</span> stack */}
+                              </h2>
                          <p className="flow-text grey-text text-darken-1">
-                              Create an account on a system built to handle the most complex of security threats.
+                              Create an account on a system built to handle the most complex of security threats
                          </p>
                          <br />
-                         <div className="col s6">
+                         <div className="col s12 center-align">
                          <Link
                               to="/register"
                               style={{
-                              width: "140px",
-                              borderRadius: "3px",
-                              letterSpacing: "1.5px"
+                              width: "200px",
+                              borderRadius: "5px",
+                              letterSpacing: "1.5px",
+                              color: "white",
+                              fontWeight: "800"
                               }}
-                              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                              className="btn btn-large waves-effect waves-light hoverable blue accent-2"
                          >
-                              Register
+                             SIGN UP
                          </Link>
                          </div>
-                         <div className="col s6">
+                         {/* <div className="col s6">
                          <Link
                               to="/login"
                               style={{
@@ -42,11 +43,11 @@ const Landing = () => {
                          >
                               Log In
                          </Link>
-                         </div>
+                         </div> */}
                          </div>
                     </div>
                </div>
-               <LayoutFooter />
+               </Layout>
           </>
      );
 }

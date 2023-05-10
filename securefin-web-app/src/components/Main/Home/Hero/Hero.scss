@@ -4,28 +4,33 @@
     width: 100%;
     background-size: cover;
     height: max-content;
+   
     &__container {
         &-image {
           margin-bottom: 5rem;
-          margin-top: 2rem;
+          margin-top: 1rem;
           width: 100%;
-          margin-left: auto;
+          margin-left: 2rem;
+          border-radius: 10px;
           @media screen and (max-width: $small-screen) {
             margin-left: auto;
           }
         }
+        }
         &-contain {
+          margin: 3rem;
           &__intro {
+            
             h1 {
-              width: 300px;
+              width: 570%;
               font-weight: 700;
               font-size: larger;
               line-height: 40px;
               letter-spacing: -1px;
-              color: $red-color;
+              color: $blue-color;
             }
             p {
-              width: 250px;
+              width: 100%;
               font-size: small;
               font-style: normal;
               font-weight: 400;
@@ -35,13 +40,15 @@
               margin-top: 12px;
             }
           }
-          &__button {
-            margin-top: 1.5rem;
-            background-color: $red-color;
-            border: none;
-          }
+          
         }
-}
+        .start-button {
+          margin-top: 1rem;
+          color: $white-color;
+          background-color: $blue-color;
+          border: none;
+          
+        }
 
 &--mobile-only {
   display: none;

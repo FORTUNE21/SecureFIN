@@ -204,6 +204,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100lvh;
+  background: linear-gradient(to right bottom,rgba(0,0,0,0.805),rgba(0, 0, 0, 0.805)),url(../../assets/web.jpeg);
   h1 {
     text-align: center;
     margin-top: 2rem;

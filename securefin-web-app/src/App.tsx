@@ -1,5 +1,5 @@
 import "./App.scss";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import {/* Route, Link,*/ BrowserRouter as Router } from 'react-router-dom';
 // import { Provider } from 'react-redux';
 import AppRoutes from "./AppRoutes";
 // import Login from './pages/Auth/Login/Login';

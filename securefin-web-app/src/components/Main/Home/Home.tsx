@@ -1,6 +1,7 @@
-import Layout from "../../Layout/Layout";
 import "./Home.scss";
 import Hero from "../Home/Hero/Hero";
+import Layout from "../../Layout/Layout";
+
 const Home = () => {
     return (
         <>

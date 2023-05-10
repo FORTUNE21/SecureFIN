@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { /*Link, useSearchParams,*/ useNavigate } from 'react-router-dom';
+import React, { /*Component,*/ useState } from 'react';
+import { Link, /*useSearchParams,*/ useNavigate } from 'react-router-dom';
 import "../../Auth.scss";
 
 const LoginForm = () => {
@@ -62,19 +62,19 @@ const LoginForm = () => {
                   <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label>
                 </fieldset>
                 <div className="">
-                  <div
-                   style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)'}}
-                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100" 
-                   onClick={onSubmitSignIn}
-                   > Sign In
-                   {/* <Link to='/'>
-                    Sign In
-                   </Link> */}
+
+                  <div>
+                  <Link to='/home'
+                  style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)', textDecoration: 'none'}}
+                  className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100" 
+                  onClick={onSubmitSignIn} >
+                  Sign In
+                   </Link>
                    </div>
                 </div>
                 <div className="lh-copy mt3 f6 link dim db pointer">   
-                    Sign up
-                  <a className="f6 link dim db pointer">Forgot your password?</a>
+                    Remember Me
+                  <Link to="/" className="f6 link dim db pointer">Forgot your password?</Link>
                 </div>
               </form>
             </main>

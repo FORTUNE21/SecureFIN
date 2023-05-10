@@ -3,31 +3,78 @@
 @mixin flex-center {
   display: flex;
   align-items: center;
+  // justify-content: center;
 }
 
 .layout-header {
+  
+  position: sticky;
+  width: 100%;
   justify-content: space-between;
   top: 0;
   height: 5rem;
+  font-family:cursive;
   background-color: $white-color;
-  @include flex-center;
-
+  // @include flex-center;
+  
   nav {
-    @include flex-center;
+    // @include flex-center;
+    display: flex;
+    flex-grow: 1;
+    padding: 0 2rem;
     height: 5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     background-color: $white-color;
+    .auth-nav{
+      flex-direction: row;
+      display: flex;
+      margin-left: auto;
+      justify-self: flex-end;
+      gap: 30px;
+      &__link{
+        text-decoration: none;
+        font-size: medium;
+        font-weight: bolder;
+        color: $blue-color;
+      
+      &:hover {
+        color: $black-color;
 
+      }
+    }
+      &__btn {
+        font-size: medium;
+        font-weight: bolder;
+        background-color: $blue-color;
+        border: none;
+        width: 10rem;
+        height: 4rem;
+        &:hover {
+          color: $black-color;
+          border-color: $black-color;
+        }
+      }
+    }
     .ul-items {
       list-style: none;
       cursor: pointer;
-      padding: 50px;
+
       .li-items {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        justify-items: center;
         a {
           text-decoration: none;
-          color: $black-color;
-          margin: 0 2rem;
+          color: $gray-color;
+          margin: 0 1rem;
           font-size: medium;
-          font-weight: 700;
+          font-weight: bolder;
+        }
+        a:hover {
+         color:purple;
         }
       }
     }
@@ -48,11 +95,20 @@
   }
 
   &--icon {
-    color: $red-color;
+    color: $blue-color;
     cursor: pointer;
   }
   .logo {
-    justify-content: left;
-    margin-left: 5%;
+  
+  span {
+      font-size: smaller;
+      margin-right: 5px;
+      padding-right: 20px;
+      color: $blue-color;
+      font-weight: bolder;
+      font-family:'Segoe UI';
+    }
+    
   }
+  
 }
