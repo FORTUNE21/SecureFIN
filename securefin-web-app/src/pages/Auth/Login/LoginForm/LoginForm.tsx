@@ -64,12 +64,15 @@ const LoginForm = () => {
                 <div className="">
 
                   <div>
-                  <Link to='/home'
-                  style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)', textDecoration: 'none'}}
-                  className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100" 
+                  <div 
+                  style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)', 
+                  textDecoration: 'none', color:'white',
+                
+                }}
+                  className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100 center-align" 
                   onClick={onSubmitSignIn} >
                   Sign In
-                   </Link>
+                   </div>
                    </div>
                 </div>
                 <div className="lh-copy mt3 f6 link dim db pointer">   

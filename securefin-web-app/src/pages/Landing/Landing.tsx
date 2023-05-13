@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import Layout from "../../components/Layout/Layout";
+import LayoutFooter from '../../components/Layout/LayoutFooter/LayoutFooter';
+import LayoutHeader from '../../components/Layout/LayoutHeader/LayoutHeader';
 
 const Landing = () => {
      return(
           <>
-              <Layout layoutMainClass="home-page">
+          < LayoutHeader/>
                <div style={{ height: "45vh" }} className="container valign-wrapper">
                     <div className="row">
                          <div className="col s16 center-align">
@@ -18,7 +19,7 @@ const Landing = () => {
                          <br />
                          <div className="col s12 center-align">
                          <Link
-                              to="/register"
+                              to="/signup"
                               style={{
                               width: "200px",
                               borderRadius: "5px",
@@ -47,7 +48,7 @@ const Landing = () => {
                          </div>
                     </div>
                </div>
-               </Layout>
+               <LayoutFooter />
           </>
      );
 }

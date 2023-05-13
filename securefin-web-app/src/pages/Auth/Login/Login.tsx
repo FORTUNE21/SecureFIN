@@ -3,9 +3,6 @@ import LoginForm from "./LoginForm/LoginForm";
 import { Card } from "../../../components/ui";
 import "../Auth.scss";
 
-
-
-
 const Login = () => {
   return (
     <>

@@ -41,9 +41,9 @@ const SignUpForm = () => {
         <div className="container">
           <div className="">
             <div className="col s8 offset-s2">
-              <Link to="/" className="btn-flat waves-effect">
-                <i className="material-icons left">keyboard_backspace</i> Back to
-                home
+              <Link to="/home" className="btn-flat waves-effect">
+                {/*<i className="material-icons left">keyboard_backspace</i> */}
+                Back to home
               </Link>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <h4>
@@ -88,7 +88,8 @@ const SignUpForm = () => {
                       borderRadius: "3px",
                       letterSpacing: "1.5px",
                       marginTop: "1rem",
-                      background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)',
+                      color: "white",
+                      background: 'linear-gradient(120deg, hotblue 0%, lightblue 100%)',
                     }}
                     
                     onClick={onSubmitSignUp}
