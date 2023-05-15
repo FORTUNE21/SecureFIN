@@ -94,7 +94,7 @@ const LoginForm = () => {
                 }}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100 center-align"
                 type="submit"
-                onClick = (onSubmitSignIn)
+                onClick = {onSubmitSignI}
                 disabled={loading}
               >
                 {loading ? "Please wait!!!" : "Sign In"}
