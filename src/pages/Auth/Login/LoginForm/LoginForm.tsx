@@ -43,7 +43,7 @@ const LoginForm = () => {
         } else {
           const data = await res.json();
           localStorage.setItem("access_token", data.access_token);
-          navigate("/");
+          navigate("/home");
         }
       })
       .catch((err) => {
