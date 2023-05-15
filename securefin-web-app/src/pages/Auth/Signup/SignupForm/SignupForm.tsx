@@ -41,7 +41,12 @@ const SignUpForm = () => {
         <div className="container">
           <div className="">
             <div className="col s8 offset-s2">
-              <Link to="/home" className="btn-flat waves-effect">
+              <Link to="/" className="btn-flat waves-effect"
+              style ={{
+                textDecoration: "none",
+                color: "blue"
+              }}
+              >
                 {/*<i className="material-icons left">keyboard_backspace</i> */}
                 Back to home
               </Link>
@@ -49,9 +54,7 @@ const SignUpForm = () => {
                 <h4>
                   <b>Sign up</b> below
                 </h4>
-                <p className="grey-text text-darken-1">
-                  Already have an account? <Link to="/login">Log in</Link>
-                </p>
+                
               </div>
               <form>
                 <div className="input-field col s12">
@@ -97,6 +100,9 @@ const SignUpForm = () => {
                   >
                     Sign Up
                   </div>
+                  <p className="grey-text text-darken-1">
+                  Already have an account? <Link to="/login">Log in</Link>
+                </p>
                 </div>
               </form>
             </div>

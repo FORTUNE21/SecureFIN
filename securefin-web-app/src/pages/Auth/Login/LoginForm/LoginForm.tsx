@@ -1,10 +1,31 @@
 import React, { /*Component,*/ useState } from 'react';
 import { Link, /*useSearchParams,*/ useNavigate } from 'react-router-dom';
 import "../../Auth.scss";
+const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,}$/;
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const passwordValue = event.target.value;
+    setPassword(passwordValue);
+    setPasswordError(validatePassword(passwordValue));
+  };
+
+
+const validatePassword = (value: string): string => {
+  if (!value) {
+    return "Password is required";
+  }
+
+  if (!passwordRegex.test(value)) {
+    return "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, and one special character";
+  }
+
+  return "";
+};
 
   const navigate = useNavigate();
 
@@ -55,31 +76,31 @@ const LoginForm = () => {
                           value={password}
                           type="password"
                           placeholder="Password"
-                          onChange={(e: any) => setPassword(e.target.value)}
+                          onChange={handlePasswordChange}/*(e: any) => setPassword(e.target.value)*/
                       />
-                      <label htmlFor="password"></label>
+                      <label htmlFor="password">
+                      {passwordError && <div>{passwordError}</div>}
+                      </label>
                   </div>
                   <label className="pa0 ma0 lh-copy f6 pointer"><input type="checkbox" /> Remember me</label>
                 </fieldset>
-                <div className="">
-
-                  <div>
-                  <div 
+                <div>
+                  <button 
                   style={{background: 'linear-gradient(120deg, hotpink 0%, lightblue 100%)', 
                   textDecoration: 'none', color:'white',
                 
                 }}
                   className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100 center-align" 
-                  onClick={onSubmitSignIn} >
+                  onClick={onSubmitSignIn}  type="submit" disabled={Boolean(passwordError)}>
                   Sign In
-                   </div>
-                   </div>
+                   
+                </button>
                 </div>
                 <div className="lh-copy mt3 f6 link dim db pointer">   
                     Remember Me
                   <Link to="/" className="f6 link dim db pointer">Forgot your password?</Link>
                 </div>
-              </form>
+              </form> 
             </main>
         </div>
       </>
