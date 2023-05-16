@@ -80,12 +80,12 @@ const LoginForm = () => {
                   onChange={handleChange}
                 />
               </div>
-              /*<label className="pa0 ma0 lh-copy f6 pointer">
+              {/* <label className="pa0 ma0 lh-copy f6 pointer">
                 <input type="checkbox" /> Remember me
-              </label>*/
+              </label> */}
             </fieldset>
             <div>
-              <button
+              <div
                 style={{
                   background:
                     "linear-gradient(120deg, hotpink 0%, lightblue 100%)",
@@ -93,12 +93,11 @@ const LoginForm = () => {
                   color: "white",
                 }}
                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib w-100 center-align"
-                type="submit"
                 onClick = {onSubmitSignIn}
-                disabled={loading}
+              //   disabled={loading}
               >
                 {loading ? "Please wait!!!" : "Sign In"}
-              </button>
+              </div>
             </div>
             <p style={{ color: "red", fontSize: "14px", marginTop: "10px" }}>
               {errorMessage}
